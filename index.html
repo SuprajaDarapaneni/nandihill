@@ -397,18 +397,45 @@
 </footer>
 
 <script>
-    // Navbar Scroll Effect
+    // 1. Navbar Scroll Effect
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         header.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Scroll Reveal Animation Script
+    // 2. Mobile Menu Toggle
+    const menuBtn = document.querySelector('.mobile-menu-icon');
+    const navLinks = document.querySelector('nav');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Toggle between Hamburger and Close ('X') icon
+        const icon = menuBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+        });
+    });
+
+    // 3. Reveal Animation on Scroll
     const revealElements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right');
 
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
-        const elementVisible = 150;
+        const elementVisible = 100;
 
         revealElements.forEach((reveal) => {
             const elementTop = reveal.getBoundingClientRect().top;
@@ -419,7 +446,6 @@
     };
 
     window.addEventListener('scroll', revealOnScroll);
-    // Trigger once on load
     revealOnScroll();
 </script>
 
