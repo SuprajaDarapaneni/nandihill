@@ -283,11 +283,11 @@ header.scrolled .mobile-menu-icon { color: var(--primary-color); }
     border-radius: 0 0 8px 0;
 }
 
-.sub-heading {
+.heading {
     color: var(--secondary-color);
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 0.8rem;
+    font-size: 2rem;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -761,4 +761,78 @@ footer strong { color: var(--bg-white); font-family: var(--font-heading); letter
     
     /* 9. Images */
     .image-frame::after { display: none; } /* Remove decorative box on mobile to save space */
+}
+/* ================= COMPANY PROFILE STYLES ================= */
+
+/* Mission Quote Box */
+.mission-box {
+    background: var(--bg-cream);
+    border-left: 4px solid var(--secondary-color);
+    padding: 25px;
+    margin: 30px 0;
+    position: relative;
+    border-radius: 0 8px 8px 0;
+}
+
+.mission-box p {
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--secondary-color);
+    color: var(--bg-white);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+/* Stats Row */
+.stats-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1;
+}
+
+.stat-desc {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Mobile Adjustment */
+@media screen and (max-width: 768px) {
+    .stats-row {
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .stat-num { font-size: 2rem; }
 }

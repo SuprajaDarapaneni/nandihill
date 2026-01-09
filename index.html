@@ -23,10 +23,10 @@
 <header id="navbar">
   <div class="nav-container">
     <div class="logo">
-      <img src="images/logo1.jpeg" alt="Nandi Hills Logo">
+      <img src="images/logo.png" alt="Nandi Hills Logo">
       <div class="logo-text">
-        <span>Sri Venkateswara Estates</span>
-        <small>Nandi Hills</small>
+        <span>Nandi Hills</span>
+        <small>Sri Venkateswara Estates</small>
       </div>
     </div>
 
@@ -58,6 +58,49 @@
         <a href="#projects" class="btn btn-primary">View Projects</a>
         <a href="#contact" class="btn btn-outline">Enquire Now</a>
     </div>
+  </div>
+</section>
+<section id="company-profile" class="section-padding bg-white">
+  <div class="container two-col-grid">
+    
+    <div class="text-col reveal-left">
+      <h4 class="heading">About Us</h4>
+      <h2>Excellence in Every Square Foot</h2>
+      
+      <p>
+        <strong>Since 2008Venkateswara Estates</strong> has built a strong foundation of excellence across the real estate landscape in and around Guntur. 
+        Established with a vision to empower people with self-reliant living, we have successfully completed several landmark projects that stand as a testament to our commitment and quality.
+      </p>
+
+      <p>
+        We have steadily grown into one of the most trusted names in the industry, known for innovation, transparency, and dedication to customer happiness.
+      </p>
+
+      <div class="mission-box">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <p>
+          "Our mission is to deliver world-class, integrated living environments combining modern infrastructure with serene surroundings."
+        </p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+            <span class="stat-num">18+</span>
+            <span class="stat-desc">Years of Experience</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-desc">Customer Satisfaction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-col reveal-right">
+      <div class="image-frame">
+        <img src="images/image.png" alt="Venkateswara Estates Projects">
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -140,7 +183,7 @@
       
       <div class="project-card featured reveal-up">
         <div class="project-img">
-            <img src="images/location.png" alt="Nandi Hills Layout">
+            <img src="images/nandihills.png" alt="Nandi Hills Layout">
             <span class="status-badge">ONGOING</span>
         </div>
         <div class="project-info">
@@ -161,14 +204,15 @@
       <div class="past-projects reveal-up">
         <h3>Completed Successes</h3>
         <div class="past-list-grid">
+          <div class="past-item">Ravilla Gardens</div>
             <div class="past-item">Lalitha Nivasam</div>
             <div class="past-item">Sri Nivasam</div>
-            <div class="past-item">Individual Houses</div>
-            <div class="past-item">Duplex Houses</div>
+            <!-- <div class="past-item">Individual Houses</div>
+            <div class="past-item">Duplex Houses</div> -->
             <div class="past-item">Weekend Homes</div>
             <div class="past-item">Seshadri Gardens</div>
             <div class="past-item">Iskon City</div>
-            <div class="past-item">Ravilla Gardens</div>
+            
         </div>
       </div>
 
@@ -447,6 +491,36 @@
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+    // ... (Your existing scroll code) ...
+
+    /* ================= LIGHTBOX SCRIPT ================= */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close-lightbox');
+    
+    // Select all images inside gallery-item
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    // Add click event to all gallery images
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            lightboxImg.src = img.src; // Set popup image to clicked image
+        });
+    });
+
+    // Close when X is clicked
+    closeBtn.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    // Close when clicking outside the image (on background)
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+    
 </script>
 
 </body>
