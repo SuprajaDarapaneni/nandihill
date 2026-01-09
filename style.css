@@ -265,11 +265,19 @@ header.scrolled .mobile-menu-icon { color: var(--primary-color); }
     position: relative;
     border-radius: 8px;
     overflow: visible;
+    
+    /* --- NEW: Controls the size --- */
+    max-width: 350px;  /* Adjust this number to make it bigger/smaller */
+    margin: 0 auto;    /* Centers the image in the column */
+    display: block;
 }
 
 .image-frame img {
+    width: 100%;       /* Fills the smaller container */
+    height: auto;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    display: block;
 }
 
 .image-frame::after {
