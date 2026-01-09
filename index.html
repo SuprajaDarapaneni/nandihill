@@ -430,7 +430,8 @@
 
             <div class="contact-form-container reveal-right">
                 <h3>Request A Call Back</h3>
-                <form action="#" class="contact-form">
+                <form class="contact-form" onsubmit="sendToWhatsApp(); return false;">
+
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" placeholder="Enter your name" required>
@@ -536,6 +537,25 @@
             lightbox.classList.remove('active');
         }
     });
+    function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var whatsappNumber = "917799524567"; // Your WhatsApp number
+
+    var text =
+        "New Enquiry from Website:%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Email: " + email + "%0A" +
+        "Message: " + message;
+
+    var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+
+    window.open(url, "_blank");
+    }
 </script>
 
 </body>
